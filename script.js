@@ -20,12 +20,16 @@ function checkCoverage(event) {
     return;
   }
 
-  result.textContent = "Consulta recebida! Integre este formulário ao seu sistema/CRM para retornar a disponibilidade real.";
+  result.textContent = "Dados preenchidos! Redirecionando para o WhatsApp...";
+
+  const message = `Olá! Quero consultar a cobertura da Maxxi Internet. Meu CEP é ${cep} e meu endereço é ${address}.`;
+  const url = `https://wa.me/5551960009280?text=${encodeURIComponent(message)}`;
+  window.open(url, "_blank", "noopener");
 }
 
 function openWhatsApp() {
-  const phone = "5551960007004"; // TROQUE pelo WhatsApp oficial da Maxxi
-  const message = encodeURIComponent("Olá! Quero contratar um plano da Maxxi Internet Fibra.");
+  const phone = "5551960009280"; // TROQUE pelo WhatsApp oficial da Maxxi
+  const message = encodeURIComponent("Olá! Quero falar com a Maxxi Internet Fibra.");
   window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
 }
 
